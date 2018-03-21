@@ -27,7 +27,9 @@ router.post('/', (req, res) => {
     User
         .findById(req.body.authorId)
         .then(user => {
-            req.body.author = { _id: user.id }
+            req.body.author = {
+                _id: user.id
+            }
             const newBlog = new Blog(req.body);
             return newBlog.save()
         })
@@ -59,8 +61,9 @@ router.get('/:id', (req, res) => {
 
 router.put('/:id', (req, res) => {
     Blog.findByIdAndUpdate(
-        req.params.id,
-        { $set: req.body })
+            req.params.id, {
+                $set: req.body
+            })
         .then(blog => {
             res.status(204).send(req.body);
         })
