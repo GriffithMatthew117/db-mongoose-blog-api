@@ -1,4 +1,4 @@
-module.exports = function createModelExpectations (expect, u, expectedModel) {
+module.exports = function createModelExpectations(expect, u, expectedModel) {
     Object
         .keys(expectedModel)
         .forEach(function (key) {
