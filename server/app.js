@@ -1,4 +1,4 @@
-const express =require('express');
+const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -10,8 +10,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(morgan("dev"));
 
-app.get('/', (req,res)=>{
+app.get('/', (req, res) => {
     res.status(200).send();
+    res.send('I am the man')
 })
 
 app.use('/api/users', require('./routes/users'));
