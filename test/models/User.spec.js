@@ -1,10 +1,6 @@
-const {
-    expect
-} = require('chai');
+const { expect } = require('chai');
 
-const {
-    fakeUser
-} = require('../lib/fake');
+const { fakeUser } = require('../lib/fake');
 const createModelExpectations = require('../lib/createModelExpectations');
 
 const User = require('../../server/models/User');

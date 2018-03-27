@@ -1,14 +1,7 @@
-const {
-    expect
-} = require('chai');
-const {
-    ObjectId
-} = require('mongoose').Schema.Types;
+const { expect } = require('chai');
+const { ObjectId } = require('mongoose').Schema.Types;
 
-const {
-    fakeBlogs,
-    fakeUser
-} = require('../lib/fake');
+const { fakeBlogs, fakeUser } = require('../lib/fake');
 const createModelExpectations = require('../lib/createModelExpectations');
 
 const Blog = require('../../server/models/Blog');
