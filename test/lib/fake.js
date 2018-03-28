@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const User = require('../../server/models/User');
-const Blog = require('../../server/models/blog');
+const Blog = require('../../server/models/Blog');
 
 mongoose.models = {};
 mongoose.modelSchemas = {};
