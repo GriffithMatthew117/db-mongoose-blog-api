@@ -6,7 +6,7 @@ const morgan = require('morgan');
 
 var port = process.envPORT || 8080
 
-Server.listen(port, function() {
+server.listen(port, function() {
     console.log("App is running on port " + port);
 });
 // let url = 'mongodb://Masttehen:MC1ef11!@ds125479.mlab.com:25479/blogapi'
