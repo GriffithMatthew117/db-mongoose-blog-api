@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const blog = require('../models/blog');
+const Blog = require('../models/blog');
 const User = require('../models/User');
 
 router.get('/', (req, res) => {
-    blog.find()
+    Blog.find()
         .then(blogs => {
             res.status(200).json(blogs);
         });
@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/featured', (req, res) => {
-    blog.where('featured', 'true')
+    Blog.where('featured', 'true')
         .then(blog => {
             res.status(200).json(blog);
         })
@@ -30,8 +30,8 @@ router.post('/', (req, res) => {
             req.body.author = {
                 _id: user.id
             }
-            const newblog = new blog(req.body);
-            return newblog.save()
+            const newBlog = new Blog(req.body);
+            return newBlog.save()
         })
         .then(blog => {
             res.status(201).json(blog);
@@ -44,7 +44,7 @@ router.post('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    blog.findById(req.params.id)
+    Blog.findById(req.params.id)
         .then(blog => {
             if (!blog) {
                 res.status(404).send(null);
@@ -60,7 +60,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    blog.findByIdAndUpdate(
+    Blog.findByIdAndUpdate(
             req.params.id, {
                 $set: req.body
             })
@@ -75,7 +75,7 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    blog.findByIdAndRemove(req.params.id)
+    Blog.findByIdAndRemove(req.params.id)
         .then(blog => {
             res.send(req.params.id);
         })
