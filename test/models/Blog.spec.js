@@ -4,7 +4,7 @@ const { ObjectId } = require('mongoose').Schema.Types;
 const { fakeBlogs, fakeUser } = require('../lib/fake');
 const createModelExpectations = require('../lib/createModelExpectations');
 
-const Blog = require('../../server/models/Blog');
+const Blog = require('../../server/models/blog');
 const User = require('../../server/models/User');
 
 describe('Blog Model', function () {
