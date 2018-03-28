@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/featured', (req, res) => {
-    Blog.where('featured', 'true')
+    blog.where('featured', 'true')
         .then(blog => {
             res.status(200).json(blog);
         })
