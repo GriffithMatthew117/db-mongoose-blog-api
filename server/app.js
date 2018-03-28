@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
 
-// let url = 'mongodb://Masttehen:MC1ef11!@ds125479.mlab.com:25479/blogapi'
-let url = 'mongodb://heroku_f9lh48hb:9jppsllql8buha75qbevt7tago@ds125489.mlab.com:25489/heroku_f9lh48hb';
+let url = 'mongodb://Masttehen:MC1ef11!@ds125479.mlab.com:25479/blogapi'
+// let url = 'mongodb://heroku_f9lh48hb:9jppsllql8buha75qbevt7tago@ds125489.mlab.com:25489/heroku_f9lh48hb';
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/my-blog");
 mongoose.Promise = Promise;
 
