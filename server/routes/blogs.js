@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const blog = require('../models/blog');
+const Blog = require('../models/blog');
 const User = require('../models/User');
 
 router.get('/', (req, res) => {
@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
             req.body.author = {
                 _id: user.id
             }
-            const newBlog = new Blog(req.body);
+            const newBlog = new blog(req.body);
             return newBlog.save()
         })
         .then(blog => {
